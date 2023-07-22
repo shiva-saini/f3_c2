@@ -23,6 +23,7 @@ main{
     flex-flow: column wrap;
     gap: 30px;
     margin: 20px 0;
+    min-height: 500px;
 }
 #timer{
     display: flex;
@@ -172,3 +173,14 @@ main{
     height: 30px;
 }
 
+
+
+/* footer decoration */
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+
+}
