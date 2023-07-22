@@ -3,6 +3,7 @@ let activeTimersDiv = document.getElementById('active-timers');
 let idGiver = 1; // to give unique ids
 let intervalIdMap = new Map(); // map to take intervalid related to a  div
 setAlarmButton.addEventListener('click',() => {
+    document.getElementById('worning').style.display = 'none';
      let timerDiv = document.createElement('div');
      let timerDivId = idGiver++;
      timerDiv.setAttribute('id',timerDivId); // setting id of timerdiv
@@ -34,7 +35,7 @@ setAlarmButton.addEventListener('click',() => {
 
      activeTimersDiv.appendChild(timerDiv);
      setTimer(timerDivId,time); // calling setTimer function to set timer of this div
-   
+     
 })
 
 function sayHello(timerDivId) {
@@ -59,6 +60,17 @@ function sayHello(timerDivId) {
         stopButton.style.display = 'block';
         stopButton.style.backgroundColor = '#34344A';
         stopButton.style.color = 'white';
+        playNotificationSound();
+        let intervalId = setInterval(() => {
+          if(timerDiv.style.backgroundColor === 'yellow'){
+            timerDiv.style.backgroundColor = 'red'
+          }else{
+            timerDiv.style.backgroundColor = 'yellow'
+          }
+        },1000)
+        setTimeout(() => {
+           clearInterval(intervalId)
+        },4000)
        
 
     }
@@ -106,3 +118,8 @@ function setTimer(timerDivId,time){
     setTimeout(FinishTimer,time,intervalId,timerDivId)
 }
 
+
+function playNotificationSound() {
+    var audio = document.getElementById('notificationSound');
+    audio.play();
+}
