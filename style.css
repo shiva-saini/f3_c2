@@ -184,3 +184,49 @@ footer{
     height: 50px;
 
 }
+
+
+@media (max-width: 400px) {
+
+   #worning{
+    text-align: center;
+    font-size: 14px;
+   }
+   #timer{
+    width: 375px;
+    gap:5px;
+   }
+   .input-section{
+    width: 200px;
+   }
+
+   #timer .input-section input{
+    width: 35px;
+    font-size: 16px;
+   }
+
+   .active-timer{
+    width: 375px;
+    gap:5px;
+   }
+   .active-timer h5{
+    width: 80px;
+    font-size: 16px;
+    font-weight: 400;
+   }
+
+   .active-timer .active-timer-input-section{
+    width: 200px;
+    font-size: 16px;
+    font-weight: 400;
+   }
+   .btndelete{
+    width: 40px;
+   }
+
+   .btnstop{
+    width: 40px;
+   }
+}
+
+
