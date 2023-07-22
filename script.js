@@ -11,10 +11,14 @@ setAlarmButton.addEventListener('click',() => {
      let hrs = parseInt(document.getElementById('hours').value, 10);// base 10 values
      let mins = parseInt(document.getElementById('minutes').value, 10);
      let seconds = parseInt(document.getElementById('seconds').value, 10);
+
      if(isNaN(hrs) || isNaN(mins) || isNaN(seconds)){
         return; // is user enter other than number then we will not do anything
      }
 
+     document.getElementById('hours').value = "";
+     document.getElementById('minutes').value= "";
+     document.getElementById('seconds').value = "";
      let time = hrs * 60 * 60 + mins * 60 + seconds; // calculating time in seconds
      time = time * 1000; // making it according to setTime and setInterval functions
  
