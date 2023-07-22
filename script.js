@@ -106,7 +106,9 @@ function deleteActiveTimer(divId) {
         console.log("The specified div doesn't exist.");
     }
     
-
+   if(intervalIdMap.size === 0){
+    document.getElementById('worning').style.display = 'block';
+   }
     
     
 }
